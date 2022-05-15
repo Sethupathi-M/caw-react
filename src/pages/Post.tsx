@@ -13,8 +13,8 @@ function Post() {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPostById(Number(postId)));
-  }, []);
+    if (postId) dispatch(getPostById(Number(postId)));
+  }, [postId, dispatch]);
 
   const commentsMapper = useSelector(
     (state: AppState) => state.posts.allPostsComments
@@ -22,7 +22,7 @@ function Post() {
   const comments = useMemo(() => {
     const postIdKey = Number(postId);
     return postIdKey && commentsMapper ? commentsMapper[postIdKey] : [];
-  }, [commentsMapper]);
+  }, [commentsMapper, postId]);
 
   const handleOnLoadComment = (e: any) => {
     dispatch(getCommentbyId(Number(postId)));

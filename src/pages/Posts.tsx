@@ -11,7 +11,7 @@ function Posts() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPosts());
-  }, []);
+  }, [dispatch]);
 
   const filtered = useMemo(() => {
     if (searchKey !== "" && searchKey?.length > 0) {

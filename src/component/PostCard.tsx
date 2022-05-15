@@ -6,7 +6,7 @@ interface PostCardProps {
   details: IPost;
 }
 function PostCard({ details }: PostCardProps) {
-  const { body, id, title, userId } = details;
+  const { body, id, title } = details;
   return (
     <Link to={`/posts/${id}`}>
       <div className="shadow-md p-4 rounded hover:shadow-slate-400 hover:shadow-lg transition-all hover:scale-105 bg-amber-50 h-full">
