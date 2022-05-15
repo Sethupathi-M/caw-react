@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import store from "../store";
 import Posts from "../pages/Posts";
 import Post from "../pages/Post";
+import "./App.css";
 
 export default function App() {
   return (
